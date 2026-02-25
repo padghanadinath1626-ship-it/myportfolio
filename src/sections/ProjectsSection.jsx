@@ -1,8 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { FaGithub, FaExternalLinkAlt } from 'react-icons/fa';
-import Card from '../components/Card';
-import Button from '../components/Button';
+import { FaGithub } from 'react-icons/fa';
 import { PORTFOLIO_DATA } from '../utils/data';
 
 /**
@@ -27,22 +25,22 @@ export const ProjectsSection = () => {
           viewport={{ once: true }}
           className="mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold">
             Featured <span className="gradient-text">Projects</span>
           </h2>
           <div className="w-20 h-1 bg-gradient-to-r from-accent to-accentAlt rounded-full mt-4" />
         </motion.div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-8">
           {projects.map((project, index) => (
-            <motion.div key={project.id} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.4, delay: index * 0.05 }} viewport={{ once: true }}>
+            <motion.div key={project.id} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.4, delay: index * 0.05 }} viewport={{ once: true }} whileHover={{ y: -4 }}>
               <div className="group h-full">
                 {/* Project Card */}
                 <div className="glass dark:glass-dark rounded-xl overflow-hidden h-full flex flex-col transition-smooth group-hover:border-accent border border-gray-600 hover:shadow-lg hover:shadow-accent/20">
                   {/* Project Header with Icon */}
                   <motion.div
                     whileHover={{ backgroundColor: 'rgba(0, 217, 255, 0.15)' }}
-                    className="bg-gradient-to-r from-accent/20 to-accentAlt/20 p-6 flex items-center justify-between border-b border-accent/20"
+                    className="bg-gradient-to-r from-accent/20 to-accentAlt/20 p-4 sm:p-6 flex items-center justify-between border-b border-accent/20"
                   >
                     <motion.span
                       whileHover={{ scale: 1.2, rotate: 10 }}
@@ -59,14 +57,14 @@ export const ProjectsSection = () => {
                     </motion.div>
                   </motion.div>
                   {/* Project Content */}
-                  <div className="p-6 flex-1 flex flex-col gap-4">
+                  <div className="p-4 sm:p-6 flex-1 flex flex-col gap-4">
                     {/* Title */}
-                    <h3 className="text-2xl font-bold text-white group-hover:text-accent transition-smooth">
+                    <h3 className="text-xl sm:text-2xl font-bold text-white group-hover:text-accent transition-smooth">
                       {project.name}
                     </h3>
 
                     {/* Description */}
-                    <p className="text-gray-400 flex-1 line-clamp-4">
+                    <p className="text-gray-400 text-sm sm:text-base flex-1 line-clamp-4">
                       {project.description}
                     </p>
 
@@ -104,7 +102,7 @@ export const ProjectsSection = () => {
                         rel="noopener noreferrer"
                         whileHover={{ scale: 1.05 }}
                         whileTap={{ scale: 0.95 }}
-                        className="w-full flex items-center justify-center gap-2 px-4 py-2 rounded-lg bg-gray-700 text-white hover:bg-accent hover:text-dark-900 transition-smooth font-semibold text-sm"
+                        className="w-full flex items-center justify-center gap-2 px-4 py-2.5 rounded-lg bg-gray-700 text-white hover:bg-accent hover:text-dark-900 transition-smooth font-semibold text-sm"
                       >
                         <FaGithub size={16} />
                         Code

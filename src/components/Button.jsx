@@ -17,7 +17,7 @@ export const Button = ({
   ...props
 }) => {
   const baseClasses =
-    'font-medium rounded-lg transition-smooth flex items-center gap-2 justify-center whitespace-nowrap';
+    'font-medium rounded-lg transition-smooth flex items-center gap-2 justify-center text-center';
 
   const variants = {
     primary:
@@ -30,13 +30,13 @@ export const Button = ({
   const sizes = {
     sm: 'px-3 py-1.5 text-sm',
     md: 'px-6 py-2.5 text-base',
-    lg: 'px-8 py-3 text-lg',
+    lg: 'px-6 sm:px-8 py-3 text-base sm:text-lg',
   };
 
   return (
     <motion.button
-      whileHover={{ scale: 1.05 }}
-      whileTap={{ scale: 0.95 }}
+      whileHover={disabled || isLoading ? {} : { scale: 1.03 }}
+      whileTap={disabled || isLoading ? {} : { scale: 0.97 }}
       disabled={disabled || isLoading}
       onClick={onClick}
       className={`${baseClasses} ${variants[variant]} ${sizes[size]} ${className} ${

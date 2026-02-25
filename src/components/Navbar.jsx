@@ -63,14 +63,14 @@ export const Navbar = () => {
         animate={{ width: `${scrollProgress}%` }}
         transition={{ duration: 0.1 }}
       />
-      <div className="container-custom flex justify-between items-center h-20">
+      <div className="container-custom flex justify-between items-center h-16 sm:h-20">
         {/* Logo */}
         <motion.a
           href="#home"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.2 }}
-          className="text-2xl font-bold gradient-text"
+          className="text-xl sm:text-2xl font-bold gradient-text"
         >
           AKP
         </motion.a>
@@ -167,7 +167,7 @@ export const Navbar = () => {
           whileHover={{ scale: 1.1 }}
           whileTap={{ scale: 0.9 }}
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-          className="md:hidden p-2 text-black dark:text-accent"
+          className="md:hidden p-2.5 rounded-lg border border-gray-300 dark:border-accent/30 text-black dark:text-accent"
         >
           {isMobileMenuOpen ? (
             <FiX size={24} className="text-black dark:text-accent" />
@@ -188,19 +188,21 @@ export const Navbar = () => {
         transition={{ duration: 0.3 }}
         className="md:hidden overflow-hidden bg-white dark:bg-dark-800 border-t border-gray-200 dark:border-accent/20"
       >
-        <div className="container-custom py-4 flex flex-col gap-4">
+        <div className="container-custom py-4 flex flex-col gap-2">
           {navItems.map((item) => (
-            <a
+            <motion.a
               key={item.label}
               href={item.href}
               onClick={(e) => {
                 e.preventDefault();
                 scrollToSection(item.href);
               }}
-              className="text-black dark:text-gray-300 hover:text-accent dark:hover:text-accent transition-smooth py-2"
+              whileHover={{ x: 4 }}
+              whileTap={{ scale: 0.98 }}
+              className="text-black dark:text-gray-300 hover:text-accent dark:hover:text-accent transition-smooth py-2.5 px-1 rounded-md"
             >
               {item.label}
-            </a>
+            </motion.a>
           ))}
           <div className="flex gap-3 pt-4 border-t border-gray-700">
             <a

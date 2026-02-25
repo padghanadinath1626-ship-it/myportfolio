@@ -43,7 +43,7 @@ export const HeroSection = () => {
     <section
       id="home"
       data-aos="fade-in"
-      className="min-h-screen pt-20 px-4 sm:px-6 lg:px-8 flex items-center justify-center relative overflow-hidden bg-white dark:bg-transparent"
+      className="min-h-screen pt-24 sm:pt-20 px-4 sm:px-6 lg:px-8 flex items-center justify-center relative overflow-hidden bg-white dark:bg-transparent"
     >
       {/* Animated background gradient */}
       <div className="absolute inset-0 -z-10">
@@ -57,19 +57,19 @@ export const HeroSection = () => {
         animate="show"
         className="container-custom"
       >
-        <div className="grid md:grid-cols-2 gap-12 items-center">
+        <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-center">
           {/* Left Content */}
-          <motion.div variants={itemVariants} className="flex flex-col gap-6">
+          <motion.div variants={itemVariants} className="flex flex-col gap-5 sm:gap-6 order-2 md:order-1">
             <motion.div variants={itemVariants}>
-              <p className="text-accent font-semibold text-lg mb-2">Welcome to my portfolio</p>
-              <h1 className="text-5xl md:text-6xl font-bold mb-2 text-gray-900 dark:text-white">
+              <p className="text-accent font-semibold text-base sm:text-lg mb-2">Welcome to my portfolio</p>
+              <h1 className="text-3xl sm:text-4xl md:text-6xl font-bold mb-2 text-gray-900 dark:text-white leading-tight">
                 Hey, I'm{' '}
                 <span className="gradient-text">{PORTFOLIO_DATA.personal.name}</span>
               </h1>
             </motion.div>
 
-            <motion.div variants={itemVariants} className="h-16">
-              <h2 className="text-2xl md:text-3xl font-semibold text-gray-700 dark:text-gray-300">
+            <motion.div variants={itemVariants} className="min-h-[56px] sm:min-h-[64px]">
+              <h2 className="text-xl sm:text-2xl md:text-3xl font-semibold text-gray-700 dark:text-gray-300">
                 <TypewriterEffect
                   texts={[
                     'Full Stack Java Developer',
@@ -81,16 +81,17 @@ export const HeroSection = () => {
               </h2>
             </motion.div>
 
-            <motion.p variants={itemVariants} className="text-gray-600 dark:text-gray-400 text-lg leading-relaxed">
+            <motion.p variants={itemVariants} className="text-gray-600 dark:text-gray-400 text-base sm:text-lg leading-relaxed">
               {PORTFOLIO_DATA.personal.bio}
             </motion.p>
 
             {/* CTA Buttons */}
-            <motion.div variables={itemVariants} className="flex gap-4 flex-wrap">
+            <motion.div variants={itemVariants} className="flex gap-3 sm:gap-4 flex-col sm:flex-row">
               <Button
                 variant="primary"
                 size="lg"
                 icon={FiArrowRight}
+                className="w-full sm:w-auto"
                 onClick={() => document.getElementById('projects').scrollIntoView({ behavior: 'smooth' })}
               >
                 View My Work
@@ -99,6 +100,7 @@ export const HeroSection = () => {
                 variant="outline"
                 size="lg"
                 icon={FaFileDownload}
+                className="w-full sm:w-auto"
                 onClick={() => {
                   const link = document.createElement('a');
                   link.href = PORTFOLIO_DATA.resume;
@@ -111,31 +113,37 @@ export const HeroSection = () => {
             </motion.div>
 
             {/* Social Links */}
-            <motion.div variants={itemVariants} className="flex gap-4 pt-4">
-              <a
+            <motion.div variants={itemVariants} className="flex gap-3 sm:gap-4 pt-2 sm:pt-4">
+              <motion.a
                 href={PORTFOLIO_DATA.social.github}
                 target="_blank"
                 rel="noopener noreferrer"
+                whileHover={{ y: -4 }}
+                whileTap={{ scale: 0.95 }}
                 className="p-3 rounded-lg glass dark:glass-dark hover:text-accent transition-smooth"
               >
-                <FaGithub size={24} />
-              </a>
-              <a
+                <FaGithub size={22} />
+              </motion.a>
+              <motion.a
                 href={PORTFOLIO_DATA.social.linkedin}
                 target="_blank"
                 rel="noopener noreferrer"
+                whileHover={{ y: -4 }}
+                whileTap={{ scale: 0.95 }}
                 className="p-3 rounded-lg glass dark:glass-dark hover:text-accent transition-smooth"
               >
-                <FaLinkedinIn size={24} />
-              </a>
-              <a
+                <FaLinkedinIn size={22} />
+              </motion.a>
+              <motion.a
                 href={PORTFOLIO_DATA.social.facebook}
                 target="_blank"
                 rel="noopener noreferrer"
+                whileHover={{ y: -4 }}
+                whileTap={{ scale: 0.95 }}
                 className="p-3 rounded-lg glass dark:glass-dark hover:text-accent transition-smooth"
               >
-                <FaFacebookF size={24} />
-              </a>
+                <FaFacebookF size={22} />
+              </motion.a>
             </motion.div>
           </motion.div>
 
@@ -143,9 +151,9 @@ export const HeroSection = () => {
           <motion.div
             variants={floatingVariants}
             animate="animate"
-            className="hidden md:flex items-center justify-center"
+            className="flex items-center justify-center order-1 md:order-2 mb-4 md:mb-0"
           >
-            <div className="relative w-72 h-72 md:w-96 md:h-96">
+            <div className="relative w-44 h-44 sm:w-56 sm:h-56 md:w-96 md:h-96">
               {/* Animated gradient border */}
               <motion.div
                 animate={{ rotate: 360 }}
@@ -157,7 +165,7 @@ export const HeroSection = () => {
                 initial={{ scale: 0, opacity: 0 }}
                 animate={{ scale: 1, opacity: 1 }}
                 transition={{ duration: 0.8, type: 'spring', stiffness: 100 }}
-                className="absolute inset-2 rounded-full overflow-hidden border-4 border-dark-900 shadow-2xl shadow-accent/50"
+                className="absolute inset-2 rounded-full overflow-hidden border-4 border-dark-900 shadow-xl md:shadow-2xl shadow-accent/50"
               >
                 <img
                   src={PORTFOLIO_DATA.personal.profileImage}
@@ -179,7 +187,7 @@ export const HeroSection = () => {
         <motion.div
           animate={{ y: [0, 8, 0] }}
           transition={{ duration: 1.5, repeat: Infinity }}
-          className="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex flex-col items-center gap-2 cursor-pointer"
+          className="hidden sm:flex absolute bottom-8 left-1/2 transform -translate-x-1/2 flex-col items-center gap-2 cursor-pointer"
           onClick={() => document.getElementById('about').scrollIntoView({ behavior: 'smooth' })}
         >
           <p className="text-accent text-sm font-semibold">Scroll to explore</p>

@@ -131,7 +131,7 @@ export const ContactSection = () => {
           viewport={{ once: true }}
           className="mb-16 text-center"
         >
-          <h2 className="text-4xl md:text-5xl font-bold">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold">
             Get In <span className="gradient-text">Touch</span>
           </h2>
           <p className="text-gray-400 mt-4 max-w-2xl mx-auto">
@@ -145,7 +145,7 @@ export const ContactSection = () => {
           initial="hidden"
           whileInView="show"
           viewport={{ once: true }}
-          className="grid md:grid-cols-3 gap-6 mb-16"
+          className="grid sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6 mb-14 sm:mb-16"
         >
           {/* Contact Info Cards */}
           {[
@@ -175,6 +175,8 @@ export const ContactSection = () => {
                 href={contact.href}
                 variants={containerVariants}
                 className="group"
+                whileHover={{ y: -4 }}
+                whileTap={{ scale: 0.98 }}
               >
                 <Card delay={index * 0.1} className="text-center h-full">
                   <div className="flex justify-center mb-4">
@@ -201,7 +203,7 @@ export const ContactSection = () => {
           className="max-w-2xl mx-auto"
         >
           <Card className="border-2 border-accent/30">
-            <form ref={formRef} onSubmit={handleSubmit} className="space-y-6">
+            <form ref={formRef} onSubmit={handleSubmit} className="space-y-5 sm:space-y-6">
               {/* Name Field */}
               <div>
                 <label htmlFor="name" className="block text-sm font-semibold text-white mb-2">

@@ -26,13 +26,13 @@ export const SkillsSection = () => {
           viewport={{ once: true }}
           className="mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold">
             My <span className="gradient-text">Skills</span>
           </h2>
           <div className="w-20 h-1 bg-gradient-to-r from-accent to-accentAlt rounded-full mt-4" />
         </motion.div>
 
-        <div className="grid md:grid-cols-2 gap-12">
+        <div className="grid md:grid-cols-2 gap-8 md:gap-12">
           {/* Technical Skills */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
@@ -40,7 +40,7 @@ export const SkillsSection = () => {
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
           >
-            <h3 className="text-2xl font-bold text-white mb-8">Technical Skills</h3>
+            <h3 className="text-xl sm:text-2xl font-bold text-white mb-6 sm:mb-8">Technical Skills</h3>
             <div className="space-y-4">
               {allSkills.map((skill, index) => (
                 <AnimatedProgressBar
@@ -60,7 +60,7 @@ export const SkillsSection = () => {
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
           >
-            <h3 className="text-2xl font-bold text-white mb-8">Tools & Technologies</h3>
+            <h3 className="text-xl sm:text-2xl font-bold text-white mb-6 sm:mb-8">Tools & Technologies</h3>
             <div className="grid grid-cols-2 gap-4">
               {PORTFOLIO_DATA.skills.tools.map((tool, index) => (
                 <Card key={tool} delay={index * 0.1} className="text-center">
@@ -77,9 +77,9 @@ export const SkillsSection = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.3 }}
           viewport={{ once: true }}
-          className="mt-20"
+          className="mt-14 sm:mt-20"
         >
-          <h3 className="text-2xl font-bold text-white mb-8">Expertise Areas</h3>
+          <h3 className="text-xl sm:text-2xl font-bold text-white mb-6 sm:mb-8">Expertise Areas</h3>
           <div className="grid md:grid-cols-3 gap-6">
             {[
               {
