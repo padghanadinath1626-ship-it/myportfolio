@@ -89,7 +89,7 @@ export const PORTFOLIO_DATA = {
     {
       program: 'InfoBeans IT Excellence Program',
       focus: 'Full Stack Development',
-      year: 'Completed in 2026 (Anticipated)',
+      year: '2026 (Anticipated)',
       details: 'Intensive training program covering Full Stack Java Development, modern web frameworks, and industry practices.',
     },
   ],
@@ -98,7 +98,7 @@ export const PORTFOLIO_DATA = {
     {
       role: 'Full Stack Developer Intern',
       company: 'InfoBeans',
-      duration: '2024 - Present',
+      duration: '2025 - Present',
       description: 'Developing full-stack applications using Spring Boot and React with focus on clean code and best practices.',
     },
   ],
