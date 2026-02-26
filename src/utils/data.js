@@ -49,7 +49,7 @@ export const PORTFOLIO_DATA = {
       technologies: ['Spring Boot', 'React', 'MySQL', 'Razorpay', 'JWT'],
       image: '🏨',
       links: {
-        github: 'https://github.com/adinathpa2975/staybook',
+        github: 'https://github.com/padghanadinath1626-ship-it/staybook_new',
       },
       features: [
         'Hotel and room management',
