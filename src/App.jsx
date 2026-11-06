@@ -27,10 +27,10 @@ function App() {
   }, []);
 
   useEffect(() => {
-    // Simulate loading time
+    // Cinematic preloader runs for 10 seconds before the dashboard opens
     const timer = setTimeout(() => {
       setIsLoading(false);
-    }, 1500);
+    }, 10000);
 
     return () => clearTimeout(timer);
   }, []);

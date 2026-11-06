@@ -211,3 +211,151 @@ html, body {
     padding: 0 20px;
   }
 }
+
+/* ===== Interactive Preloader ===== */
+
+/* Glitchy chromatic-aberration name */
+.glitch-text {
+  position: relative;
+  display: inline-block;
+}
+
+.glitch-text::before,
+.glitch-text::after {
+  content: attr(data-text);
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  pointer-events: none;
+  opacity: 0;
+}
+
+.glitch-text::before {
+  color: #ff006e;
+  text-shadow: -2px 0 rgba(255, 0, 110, 0.75);
+  animation: glitch-slice-a 3.2s infinite steps(1, end);
+}
+
+.glitch-text::after {
+  color: #00d9ff;
+  text-shadow: 2px 0 rgba(0, 217, 255, 0.75);
+  animation: glitch-slice-b 2.7s infinite steps(1, end);
+}
+
+@keyframes glitch-slice-a {
+  0%, 88%, 100% {
+    opacity: 0;
+    transform: translate(0);
+    clip-path: inset(0 0 0 0);
+  }
+  89% {
+    opacity: 0.9;
+    transform: translate(-5px, -2px);
+    clip-path: inset(8% 0 62% 0);
+  }
+  91% {
+    opacity: 0.9;
+    transform: translate(5px, 2px);
+    clip-path: inset(58% 0 12% 0);
+  }
+  93% {
+    opacity: 0.8;
+    transform: translate(-3px, 1px);
+    clip-path: inset(32% 0 44% 0);
+  }
+  95% {
+    opacity: 0;
+    transform: translate(0);
+    clip-path: inset(0 0 0 0);
+  }
+}
+
+@keyframes glitch-slice-b {
+  0%, 55%, 100% {
+    opacity: 0;
+    transform: translate(0);
+    clip-path: inset(0 0 0 0);
+  }
+  57% {
+    opacity: 0.85;
+    transform: translate(4px, 2px);
+    clip-path: inset(20% 0 55% 0);
+  }
+  60% {
+    opacity: 0.85;
+    transform: translate(-4px, -2px);
+    clip-path: inset(66% 0 8% 0);
+  }
+  63% {
+    opacity: 0;
+    transform: translate(0);
+    clip-path: inset(0 0 0 0);
+  }
+}
+
+/* Perspective cyber floor grid */
+.loader-grid {
+  position: absolute;
+  left: -50%;
+  right: -50%;
+  bottom: -15%;
+  height: 65%;
+  background-image:
+    linear-gradient(rgba(0, 217, 255, 0.22) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 217, 255, 0.22) 1px, transparent 1px);
+  background-size: 56px 56px;
+  transform: perspective(520px) rotateX(58deg);
+  transform-origin: bottom center;
+  -webkit-mask-image: linear-gradient(to top, rgba(0, 0, 0, 0.95), transparent 85%);
+  mask-image: linear-gradient(to top, rgba(0, 0, 0, 0.95), transparent 85%);
+  animation: grid-scroll 1.6s linear infinite;
+  pointer-events: none;
+}
+
+@keyframes grid-scroll {
+  from {
+    background-position: 0 0, 0 0;
+  }
+  to {
+    background-position: 0 56px, 0 0;
+  }
+}
+
+/* Dark edges */
+.loader-vignette {
+  background: radial-gradient(
+    ellipse at center,
+    rgba(0, 0, 0, 0) 40%,
+    rgba(4, 7, 11, 0.8) 100%
+  );
+  pointer-events: none;
+}
+
+/* CRT scanlines with flicker */
+.scanlines {
+  background: repeating-linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0.045) 0px,
+    rgba(255, 255, 255, 0.045) 1px,
+    transparent 1px,
+    transparent 3px
+  );
+  animation: crt-flicker 5s infinite;
+  pointer-events: none;
+}
+
+@keyframes crt-flicker {
+  0%, 100% {
+    opacity: 0.55;
+  }
+  48% {
+    opacity: 0.75;
+  }
+  50% {
+    opacity: 0.35;
+  }
+  52% {
+    opacity: 0.7;
+  }
+}
