@@ -2,7 +2,6 @@ import { useEffect, useRef, useState } from 'react';
 import {
   AnimatePresence,
   motion,
-  useAnimationControls,
   useMotionValue,
   useSpring,
 } from 'framer-motion';
@@ -34,7 +33,7 @@ const LOADING_MESSAGES = [
   'Summoning the front-end gods...',
 ];
 
-const ORBIT_CHIPS = ['React', '</>', 'JS', 'CSS', 'Vite', 'Motion'];
+const ORBIT_CHIPS = ['React', '</>', 'JS', 'CSS', 'Vite', 'Motion','Java'];
 
 const PARTICLE_COLORS = ['#00d9ff', '#ff006e', '#ffffff', '#a78bfa'];
 const BURST_RGB = ['0,217,255', '255,0,110', '167,139,250', '255,255,255'];
@@ -210,7 +209,6 @@ export const LoadingAnimation = ({ isLoading }) => {
   const pointerRef = useRef({ x: -500, y: -500 });
   const burstsRef = useRef([]);
 
-  const shake = useAnimationControls();
   const rawGlowX = useMotionValue(-500);
   const rawGlowY = useMotionValue(-500);
   const glowX = useSpring(rawGlowX, { stiffness: 180, damping: 22, mass: 0.5 });
@@ -269,11 +267,6 @@ export const LoadingAnimation = ({ isLoading }) => {
       };
     });
     burstsRef.current.push({ x: event.clientX, y: event.clientY, life: 1, rgb, sparks });
-    shake.start({
-      x: [0, -7, 7, -4, 4, -2, 0],
-      y: [0, 5, -5, 3, -3, 0],
-      transition: { duration: 0.4 },
-    });
   };
 
   return (
@@ -340,7 +333,6 @@ export const LoadingAnimation = ({ isLoading }) => {
             {/* Center content */}
             <motion.div
               className="absolute left-1/2 top-1/2 z-10 flex w-full max-w-2xl -translate-x-1/2 -translate-y-1/2 flex-col items-center gap-5 px-4"
-              animate={shake}
             >
               {/* Orbiting tech chips */}
               {phase !== 'countdown' && (

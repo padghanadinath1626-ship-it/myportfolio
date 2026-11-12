@@ -49,17 +49,21 @@ export const AboutSection = () => {
           initial="hidden"
           whileInView="show"
           viewport={{ once: true }}
-          className="grid md:grid-cols-2 gap-12 items-center"
+          className="grid md:grid-cols-2 gap-10 lg:gap-16 items-start"
         >
           {/* Left - About Text */}
-          <motion.div variants={itemVariants} className="space-y-6">
-            <p className="text-lg text-gray-300 leading-relaxed">
-              I'm a passionate Full Stack Java Developer driven by a love for building scalable, 
-              robust applications. With expertise in both backend and frontend technologies, I create 
-              complete solutions that solve real-world problems.
+          <motion.div variants={itemVariants} className="space-y-7 md:pr-4 lg:pr-10 lg:pt-2">
+            <p className="text-lg text-gray-300 leading-relaxed mt-0">
+              I'm a passionate Full Stack Java Developer driven by a love for building scalable,
+              robust applications. With expertise in both backend and frontend technologies, I create
+              complete solutions that solve real-world problems.i have done 1 year ITEP training which is so called as
+              information technology excellence program by InfoBeans technology ,where i gained lots of hands on experience
+              and build some applications ,which are available in project section and now
+              i am  working in techbulls soft Pvt.ltd
+              as software developer intern.
             </p>
 
-            <div className="space-y-4">
+            <div className="space-y-4 lg:mt-8">
               <h3 className="text-2xl font-bold text-white">Current Focus</h3>
               <ul className="space-y-3">
                 {[

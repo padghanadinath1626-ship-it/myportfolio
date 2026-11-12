@@ -200,15 +200,23 @@ html, body {
 }
 
 /* Container */
+main {
+  width: 100%;
+}
+
+section {
+  margin: 0;
+}
+
 .container-custom {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 16px;
+  padding: 0 12px;
 }
 
 @media (min-width: 640px) {
   .container-custom {
-    padding: 0 20px;
+    padding: 0 16px;
   }
 }
 
